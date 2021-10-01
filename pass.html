@@ -1,4 +1,50 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-    <title>Pass phraseby Lithish Kumar Nagulapati</title>
+    <title>Catch a Vibe</title>
+
 </head>
+
+<body>
+    <header>Pass phrase by Lithish Kumar Nagulapati</header>
+    <h2>Getting input</h2>
+
+    <form>
+        <label for="form_phrase">Enter the Secret phrase </label>
+        <input type="password" id="form_phrase" name="form_phrase" value="Let me in">
+        <br>
+        <label for="form_test">Enter a phrase</label>
+        <input type="text" id="form_test" name="form_test" autofocus> <br>
+
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+    </form>
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+
+        correct = 0
+        wrong = 0
+
+        function processPhrase() {
+            console.log("Getting form values")
+            secret = document.getElementById("form_phrase").value
+            guess = document.getElementById("form_test").value
+            if (secret == guess) {
+                correct = correct + 1
+                alert("Access allowed")
+            } else {
+                wrong = wrong + 1
+                alert("Access denied")
+            }
+
+            out = document.getElementById("result")
+            out.innerHTML = "Correct Count: " + correct + " ,Wrong Count: " + wrong
+
+        }
+    </script>
+
+</body>
+
+</html>
