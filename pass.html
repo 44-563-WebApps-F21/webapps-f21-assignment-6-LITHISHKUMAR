@@ -17,15 +17,20 @@
         <label for="form_test">Enter a phrase</label>
         <input type="text" id="form_test" name="form_test" autofocus> <br>
 
-        <input type="button" onclick="processPhrase()" value="Check the phrase">
+        <input type="button" onclick="processPhrase()" value="Check the phrase" id="processButton" class="btn btn-primary">
     </form>
 
     <p id="result">This text will be replaced </p>
+    <br>
+    <img src="images/lionimages.jpg" class="img-thumbnail" alt="lion" onclick="newImage();" id="images" style="width: 200; height: 200;">
+
+
 
     <script>
 
-        correct = 0
-        wrong = 0
+       var correct = 0
+       var wrong = 0
+        count = 0
 
         function processPhrase() {
             console.log("Getting form values")
@@ -42,6 +47,22 @@
             out = document.getElementById("result")
             out.innerHTML = "Correct Count: " + correct + " ,Wrong Count: " + wrong
 
+        }
+        function newImage(){
+            switch(count){
+                case 0 :
+                    document.getElementById("images").src="images/giraffe.jpg"
+                    count = count + 1
+                    break;
+                case 1 :
+                    document.getElementById("images").src="images/Narwhalimage.jpg"
+                    count = count + 1
+                    break;
+                case 2 :
+                    document.getElementById("images").src="images/lionimages.jpg"
+                    count = 0
+                    break;                    
+            }
         }
     </script>
 
